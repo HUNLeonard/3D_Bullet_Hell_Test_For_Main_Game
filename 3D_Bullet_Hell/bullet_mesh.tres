@@ -1,7 +1,0 @@
-[gd_resource type="BoxMesh" load_steps=2 format=3 uid="uid://ccp1ojp7gn3id"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npv0e"]
-
-[resource]
-material = SubResource("StandardMaterial3D_npv0e")
-size = Vector3(0.1, 0.1, 0.3)

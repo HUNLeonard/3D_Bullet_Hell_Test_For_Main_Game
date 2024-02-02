@@ -17,11 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-BulletHandler="*res://BulletHandler.gd"
-DebugGeometry="*res://debug_geometry.gd"
+BulletHandler="*res://Bullets/BulletHandler.gd"
 
 [display]
 
+window/size/mode=4
 window/vsync/vsync_mode=0
 
 [input]

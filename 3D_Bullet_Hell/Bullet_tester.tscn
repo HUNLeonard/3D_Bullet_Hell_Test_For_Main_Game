@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvfbqkxfhnfja"]
+[gd_scene load_steps=8 format=3 uid="uid://bvfbqkxfhnfja"]
 
-[ext_resource type="Script" path="res://enemy.gd" id="1_hyfwf"]
-[ext_resource type="Script" path="res://BulletHandler.gd" id="2_464k2"]
-[ext_resource type="Script" path="res://CharacterBody3D.gd" id="3_wu2h3"]
-[ext_resource type="Material" uid="uid://ctm31alkyr0xw" path="res://green_mat.tres" id="4_w72h6"]
+[ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_ck67w"]
+[ext_resource type="Script" path="res://Player/CharacterBody3D.gd" id="2_nxwdq"]
+[ext_resource type="Material" uid="uid://ctm31alkyr0xw" path="res://Player/green_mat.tres" id="3_pp5fq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s8aek"]
 font_size = 32
@@ -11,15 +10,17 @@ font_color = Color(0.941176, 0, 0, 1)
 outline_size = 10
 outline_color = Color(0, 1, 1, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ro16e"]
-albedo_color = Color(0.941176, 0.627451, 0, 1)
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_u6k7e"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_nkgwi"]
-material = ExtResource("4_w72h6")
+material = ExtResource("3_pp5fq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ro16e"]
+albedo_color = Color(0.941176, 0.627451, 0, 1)
 
 [node name="Bullet_tester" type="Node3D"]
+
+[node name="ActiveBullets" type="Node3D" parent="."]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -40,28 +41,10 @@ label_settings = SubResource("LabelSettings_s8aek")
 
 [node name="Enemy" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
-script = ExtResource("1_hyfwf")
-
-[node name="BulletHandler" type="Node" parent="."]
-script = ExtResource("2_464k2")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.707107, -3.09086e-08, 0.707107, -0.707107, -3.09086e-08, 0.707107, 0, -1, -4.37114e-08, 0, 0, 0)
-shadow_enabled = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-material_override = SubResource("StandardMaterial3D_ro16e")
-use_collision = true
-size = Vector3(20, 1, 11)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
-use_collision = true
-size = Vector3(1, 1, 7)
+script = ExtResource("1_ck67w")
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-script = ExtResource("3_wu2h3")
+script = ExtResource("2_nxwdq")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
@@ -72,3 +55,20 @@ mesh = SubResource("SphereMesh_nkgwi")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5, 0)
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World"]
+transform = Transform3D(0.950027, 1.36453e-08, -0.312169, 0.312169, -4.15269e-08, 0.950027, 0, -1, -4.37113e-08, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+material_override = SubResource("StandardMaterial3D_ro16e")
+use_collision = true
+size = Vector3(20, 1, 11)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+use_collision = true
+size = Vector3(1, 1, 7)

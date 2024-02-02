@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceb7804bqibtd"]
+
+[ext_resource type="Script" path="res://Bullets/Bullet.gd" id="1_colvq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d2c2u"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kf8xp"]
+material = SubResource("StandardMaterial3D_d2c2u")
+size = Vector3(0.1, 0.1, 0.3)
+
+[node name="Bullet" type="MeshInstance3D"]
+layers = 8
+cast_shadow = 0
+gi_mode = 0
+mesh = SubResource("BoxMesh_kf8xp")
+script = ExtResource("1_colvq")

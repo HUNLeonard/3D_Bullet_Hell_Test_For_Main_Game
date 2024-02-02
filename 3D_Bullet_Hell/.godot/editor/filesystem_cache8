@@ -1,0 +1,16 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1706873642
+Bullet_tester.tscn::PackedScene::3870798139558376318::1706813669::0::1::::<><>::res://Enemy/enemy.gd<>res://Player/CharacterBody3D.gd<>uid://ctm31alkyr0xw::::res://Player/green_mat.tres
+icon.svg::CompressedTexture2D::5436091884379115518::1706650503::1706650520::1::::<><>::
+::res://Bullets/::1706813669
+Bullet.gd::GDScript::-1::1706807677::0::1::::Bullet<>MeshInstance3D<>::
+bullet.tres::ShaderMaterial::5210635160297207571::1706783335::0::1::::<><>::
+Bullet.tscn::PackedScene::5057664352609994541::1706813401::0::1::::<><>::res://Bullets/Bullet.gd
+BulletHandler.gd::GDScript::-1::1706813669::0::1::::<>Node<>::
+bullet_mesh.tres::BoxMesh::4945788861244472843::1706806304::0::1::::<><>::
+::res://Enemy/::1706813074
+enemy.gd::GDScript::-1::1706812983::0::1::::<>Node3D<>::
+::res://Player/::1706813069
+CharacterBody3D.gd::GDScript::-1::1706806923::0::1::::<>Node<>::
+green_mat.tres::StandardMaterial3D::6132948453476495760::1706650503::0::1::::<><>::
+red_mat.tres::StandardMaterial3D::713519974364064035::1706650503::0::1::::<><>::
